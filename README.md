@@ -46,6 +46,20 @@ Hemos utilizado Thymeleaf para generar contenido web dinámicamente y manipular 
 
 7. **th:text="${#dates.format(usuario.fechaNacimiento, 'dd-MM-yyyy')}"**: Hemos utilizado la expresión `#dates.format` de Thymeleaf para formatear la fecha "usuario.fechaNacimiento" en el formato deseado.
 
+8. **Inclusión de Fragmentos con `th:replace`**: Con Thymeleaf, podemos dividir nuestras páginas web en fragmentos reutilizables. Utilizamos la expresión `th:replace` para incluir fragmentos en nuestras vistas. Por ejemplo, `<section th:replace="~{controles/tiempo :: interceptor}">` incluye el fragmento "interceptor" definido en el archivo "controles/tiempo.html". Esto nos permite modularizar la presentación y reutilizar componentes visuales de manera eficiente.
+
+9. **Definición de Fragmentos con `th:fragment`**: Para crear fragmentos reutilizables, utilizamos la expresión `th:fragment`. Por ejemplo, `<section th:fragment="interceptor">` define un fragmento llamado "interceptor". Luego, este fragmento se puede incluir en otras partes de nuestras vistas con `th:replace` o `th:insert`, lo que mejora la organización de nuestro código y la reutilización de componentes visuales.
+
+## 🕐 Interceptor de Tiempo Transcurrido
+
+Hemos incorporado un interceptor en este proyecto que mide el tiempo transcurrido en la ejecución de solicitudes a rutas específicas. El interceptor registra el tiempo al inicio de una solicitud y lo compara al final, lo que proporciona información valiosa sobre el rendimiento de nuestras rutas, que en este caso se muestra en la vista para enseñar la forma de hacerlo simplemente.
+
+### Configuración del Interceptor
+
+El interceptor se configura en la clase `MvcConfig`, que actúa como la configuración central para la aplicación. En esta configuración, vinculamos el interceptor a las rutas específicas que deseamos medir. Por ejemplo, el interceptor se aplica a las rutas que comienzan con "/form/". Esto nos permite medir el tiempo de procesamiento de solicitudes en esas rutas y obtener información para optimizar el rendimiento de la aplicación.
+
+El uso de este interceptor en combinación con Thymeleaf y fragmentos mejora la experiencia de desarrollo y monitoreo de nuestra aplicación web.
+
 ## 🛠 Implementación del Atributo "Roles"
 
 Hemos incluido la implementación del atributo "Roles" en el proyecto, que sigue una estructura similar a la de "Paises". Aquí se detalla la implementación:
