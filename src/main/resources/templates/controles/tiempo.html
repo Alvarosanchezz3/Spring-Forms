@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeLeaf.org">
+
+<body>
+	<section th:fragment="interceptor"> <!-- th:fragment="" -> Identificador de thymeLeaf -->
+		<div class="alert alert-success" th:if="${tiempoTranscurrido != null}">
+			<span th:text="'Tiempo Transcurrido: ' + ${tiempoTranscurrido} + ' milisegundos'"></span>
+		</div>	
+	</section>
+</body>
+</html>

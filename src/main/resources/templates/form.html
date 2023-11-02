@@ -10,6 +10,8 @@
           crossorigin="anonymous">
 </head>
 <body>
+	
+<section th:replace="~{controles/tiempo :: interceptor}"></section> <!-- Reutilizacion de fragments de thymeLeaf -->
 
 <div class="container mt-4 mb-5">
 	<h3 th:text="${titulo}"></h3>

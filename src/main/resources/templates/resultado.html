@@ -11,6 +11,8 @@
 </head>
 <body>
 	
+	<section th:replace="~{controles/tiempo :: interceptor}"></section> <!-- Reutilizacion de fragments de thymeLeaf -->
+	
 	<div class="container">
 		<ul class="list-group my-4">
 			<li class="list-group-item active" th:text="${titulo}"></li>
