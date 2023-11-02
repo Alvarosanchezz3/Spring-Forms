@@ -50,16 +50,6 @@ Hemos utilizado Thymeleaf para generar contenido web dinámicamente y manipular 
 
 9. **Definición de Fragmentos con `th:fragment`**: Para crear fragmentos reutilizables, utilizamos la expresión `th:fragment`. Por ejemplo, `<section th:fragment="interceptor">` define un fragmento llamado "interceptor". Luego, este fragmento se puede incluir en otras partes de nuestras vistas con `th:replace` de esta manera: `th:replace="~{controles/tiempo :: interceptor}"`, esto mejora la organización de nuestro código y la reutilización de componentes visuales.
 
-## 🕐 Interceptor de Tiempo Transcurrido
-
-Hemos incorporado un interceptor en este proyecto que mide el tiempo transcurrido en la ejecución de solicitudes a rutas específicas. El interceptor registra el tiempo al inicio de una solicitud y lo compara al final, lo que proporciona información valiosa sobre el rendimiento de nuestras rutas, que en este caso se muestra en la vista para enseñar la forma de hacerlo simplemente.
-
-### Configuración del Interceptor
-
-El interceptor se configura en la clase `MvcConfig`, que actúa como la configuración central para la aplicación. En esta configuración, vinculamos el interceptor a las rutas específicas que deseamos medir. Por ejemplo, el interceptor se aplica a las rutas que comienzan con "/form/". Esto nos permite medir el tiempo de procesamiento de solicitudes en esas rutas y obtener información para optimizar el rendimiento de la aplicación.
-
-El uso de este interceptor en combinación con Thymeleaf y fragmentos mejora la experiencia de desarrollo y monitoreo de nuestra aplicación web.
-
 ## 🛠 Implementación del Atributo "Roles"
 
 Hemos incluido la implementación del atributo "Roles" en el proyecto, que sigue una estructura similar a la de "Paises". Aquí se detalla la implementación:
@@ -80,5 +70,15 @@ Hemos incluido la implementación del atributo "Roles" en el proyecto, que sigue
 3. **Clase RoleServiceImpl (Implementación de RoleService)**: En su constructor, se crea una lista de roles predefinidos. Se implementan los métodos listar y obtenerPorId para proporcionar funcionalidad real de acceso a los datos de roles. La anotación `@Service` indica que esta clase es un componente administrado por Spring.
 
 4. **Clase RolesEditor**: La clase "RolesEditor" es un editor personalizado que se utiliza para convertir una representación de texto de un rol en un objeto "Role". Utiliza `@Autowired` para inyectar el servicio "RoleService". El método "setAsText" busca el rol correspondiente utilizando el servicio "RoleService" y lo establece como el valor convertido. La clase está anotada con `@Component`, registrándola como un componente de Spring.
+
+## 🕐 Interceptor de Tiempo Transcurrido
+
+Hemos incorporado un interceptor en este proyecto que mide el tiempo transcurrido en la ejecución de solicitudes a rutas específicas. El interceptor registra el tiempo al inicio de una solicitud y lo compara al final, lo que proporciona información valiosa sobre el rendimiento de nuestras rutas, que en este caso se muestra en la vista para enseñar la forma de hacerlo simplemente.
+
+### Configuración del Interceptor
+
+El interceptor se configura en la clase `MvcConfig`, que actúa como la configuración central para la aplicación. En esta configuración, vinculamos el interceptor a las rutas específicas que deseamos medir. Por ejemplo, el interceptor se aplica a las rutas que comienzan con "/form/". Esto nos permite medir el tiempo de procesamiento de solicitudes en esas rutas y obtener información para optimizar el rendimiento de la aplicación.
+
+El uso de este interceptor en combinación con Thymeleaf y fragmentos mejora la experiencia de desarrollo y monitoreo de nuestra aplicación web.
 
 Con estas implementaciones, hemos logrado una validación sólida de formularios y una gestión eficiente de los roles en la aplicación, garantizando la integridad y la seguridad de los datos. 🚀👨‍💻🌟
