@@ -48,7 +48,7 @@ Hemos utilizado Thymeleaf para generar contenido web dinámicamente y manipular 
 
 8. **Inclusión de Fragmentos con `th:replace`**: Con Thymeleaf, podemos dividir nuestras páginas web en fragmentos reutilizables. Utilizamos la expresión `th:replace` para incluir fragmentos en nuestras vistas. Por ejemplo, `<section th:replace="~{controles/tiempo :: interceptor}">` incluye el fragmento "interceptor" definido en el archivo "controles/tiempo.html". Esto nos permite modularizar la presentación y reutilizar componentes visuales de manera eficiente.
 
-9. **Definición de Fragmentos con `th:fragment`**: Para crear fragmentos reutilizables, utilizamos la expresión `th:fragment`. Por ejemplo, `<section th:fragment="interceptor">` define un fragmento llamado "interceptor". Luego, este fragmento se puede incluir en otras partes de nuestras vistas con `th:replace` o `th:insert`, lo que mejora la organización de nuestro código y la reutilización de componentes visuales.
+9. **Definición de Fragmentos con `th:fragment`**: Para crear fragmentos reutilizables, utilizamos la expresión `th:fragment`. Por ejemplo, `<section th:fragment="interceptor">` define un fragmento llamado "interceptor". Luego, este fragmento se puede incluir en otras partes de nuestras vistas con `th:replace` de esta manera: `th:replace="~{controles/tiempo :: interceptor}"`, esto mejora la organización de nuestro código y la reutilización de componentes visuales.
 
 ## 🕐 Interceptor de Tiempo Transcurrido
 
